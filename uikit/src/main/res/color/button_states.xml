@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Когда кнопка неактивна (disabled) -->
+    <item android:color="#BDBDBD" android:state_enabled="false" />
+
+    <!-- Когда кнопку нажали (pressed) -->
+    <item android:color="#388E3C" android:state_pressed="true" />
+
+    <!-- В обычном состоянии (по умолчанию) -->
+    <item android:color="@color/brand_primary" />
+</selector>
