@@ -4,10 +4,11 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center"
+    android:padding="24dp"
     android:background="#F5F5F5">
 
     <include
-        layout="@layout/view_custom_button"
-        android:id="@+id/myCustomButton" />
+        layout="@layout/view_custom_input"
+        android:id="@+id/myCustomInput" />
 
 </LinearLayout>

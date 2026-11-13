@@ -9,11 +9,24 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val button = findViewById<MaterialButton>(R.id.myCustomButton)
-        button.isEnabled = true
-        button.text = "Кнопка работает!"
-        button.setOnClickListener {
-            button.text = "1 раз нажать можно"
-            button.isEnabled = false}
+
+        // Находим наш инпут из библиотеки
+        val inputLayout = findViewById<com.google.android.material.textfield.TextInputLayout>(R.id.myCustomInput)
+
+        // Находим само поле ввода (чтобы проверить, что ввели)
+        val editText = inputLayout.editText
+
+        // Просто для теста: как только пользователь что-то ввел и нажал Enter, проверяем текст
+        editText?.setOnEditorActionListener { _, _, _ ->
+            val text = editText.text.toString()
+
+            // Если ввели неправильно (например, без собачки @), показываем ошибку
+            if (!text.contains("@")) {
+                inputLayout.error = "Введите корректный email (с символом @)"
+            } else {
+                inputLayout.error = null // Убираем ошибку, если всё ок
+            }
+            true
+        }
     }
 }
